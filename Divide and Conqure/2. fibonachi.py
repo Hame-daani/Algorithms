@@ -1,4 +1,4 @@
-from .myModules.fib_funcs import gen_result, count_calls
+from funcs import gen_result, count_calls
 
 # counters to count function calls
 recur_count = {}
