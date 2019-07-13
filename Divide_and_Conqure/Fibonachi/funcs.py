@@ -1,6 +1,7 @@
 def count_calls(counter):
     """
-    a decorator to count number of function calls with each algorithm.
+    A decorator to count number of\n
+    'function calls' with each algorithm.
     """
     def decorator(func):
         def wrapper(x):
@@ -11,6 +12,11 @@ def count_calls(counter):
 
 
 def gen_result(num, func, counts):
+    """
+    Generate a result string for output purpose.\n
+    including 'result', number of 'total calls' and
+    number of 'calls for each value'.
+    """
     def sum_calls(counts):
         """
         return sum of all values in counter dict.
@@ -19,6 +25,7 @@ def gen_result(num, func, counts):
         for x in counts.values():
             total += x
         return total
+    # main function
     result = f"""   fib memo {num} is {func(num)}.
     total calls: {sum_calls(counts)}.
     number of each call:

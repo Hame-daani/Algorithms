@@ -1,22 +1,33 @@
-from funcs import gen_result, count_calls
+from .funcs import count_calls, gen_result
 
-# counters to count function calls
+# counters dict to count function calls
+# for each value
 recur_count = {}
 memo_count = {}
+
+# cache to use in memo algorithm
+cache = {}
 
 
 @count_calls(recur_count)
 def fib_recur(x):
+    """
+    Recursive algorithm with no optimization.\n
+    T(n) = O(n^2)
+    """
     if x == 0 or x == 1:
         return 1
     else:
         return fib_recur(x-1) + fib_recur(x-2)
 
 
-# cache to use in memo algorithm
-cache = {}
 @count_calls(memo_count)
 def fib_memo(x):
+    """
+    Recursive algorithm using a cache dictionary\n
+    to memoising the results and speed up.\n
+    T(n) = O(n)
+    """
     if x in cache:
         return cache[x]
     else:
