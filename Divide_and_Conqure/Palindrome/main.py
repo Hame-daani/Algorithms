@@ -1,4 +1,8 @@
 def isPalindrome(s):
+    """
+    Recursive algorithm.\n
+    T(n) = O(n)
+    """
     def toChars(s):
         s = s.lower()
         r = ''
@@ -16,5 +20,5 @@ def isPalindrome(s):
     return isPal(toChars(s))
 
 if __name__ == "__main__":
-    print(isPalindrome("abcba"))
-    print(isPalindrome("abcdba"))
+    print("Does 'abcba' Palindrome?",isPalindrome("abcba"))
+    print("Does 'abcdba' Palindrome?",isPalindrome("abcdba"))

@@ -1,8 +1,14 @@
-def printMove(fr, to):
-    print("move " + str(fr) + ' to ' + str(to))
-
-
 def Towers(n, fr, to, help):
+    """
+    Recursive algorithm.\n
+    T(n) = 2*T(n-1) = O(2^n)
+    """
+    def printMove(fr, to):
+        """
+        Simple function to print needed move.
+        """
+        print("move " + str(fr) + ' to ' + str(to))
+    # main function
     if n == 1:
         printMove(fr, to)
     else:
