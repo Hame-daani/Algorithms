@@ -2,6 +2,12 @@
 
 Visualizing famous algorithms with time complexity and growth
 
+## Comparisions
+
+* [Recursive-Fib vs Memoizing-Fib](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Fibonachi#growth-of-algorithms)
+* [Normal-Search vs Bisect-Search](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Search#growth)
+*
+
 ## Complexities Overview
 
 ### Exponential (c^N)
