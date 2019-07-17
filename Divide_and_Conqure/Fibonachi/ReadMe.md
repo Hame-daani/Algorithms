@@ -172,7 +172,7 @@ Calcute total number of calls for calcuting first to 10th fibonachi with both al
 
 ```python
 growth_recur = {}
-for i in range(1,11):
+for i in range(1,21):
     x,recur_count = Recursive_fib(i)
     t_i = get_total(recur_count)
     growth_recur[i] = t_i
@@ -185,7 +185,7 @@ print('done')
 
 ```python
 growth_memo = {}
-for i in range(1,11):
+for i in range(1,21):
     x,memo_count = Memoizing_fib(i)
     t_i = get_total(memo_count)
     growth_memo[i] = t_i
@@ -196,29 +196,36 @@ print('done')
 
 
 Visualazing Growth of both Algorithm Side by Side.  
-Growth of **Recursive** is: **O(2^n)**  
-Growth of **Memoizing** is: **O(2n)**
+Growth of **Recursive** is **Exponantial**: **O(2^n)**  
+Growth of **Memoizing** is **Linear**: **O(2n)**
 
 
 ```python
-plt.figure(figsize=(15, 5))
+plt.figure(figsize=(20, 10))
 
-plt.subplot(121)
 values, calls = zip(*sorted(growth_recur.items()))
-plt.plot(values, calls,'bo-')
+values2, calls2 = zip(*sorted(growth_memo.items()))
+plt.subplot(131)
+plt.plot(values,calls,'bo-')
+plt.title("Recursive Growth")
+plt.xticks(list(range(0,21,2)))
 plt.xlabel("nth Fibonachi")
 plt.ylabel('Calls')
-plt.xticks(list(range(0,11,1)))
-plt.title('Recursive Growth')
 
-plt.subplot(122)
-values, calls = zip(*sorted(growth_memo.items()))
-plt.plot(values, calls,'bo-')
+plt.subplot(133)
+plt.plot(values2,calls2,'ro-')
+plt.title("Memoazation Growth")
+plt.xticks(list(range(0,21,2)))
 plt.xlabel("nth Fibonachi")
 plt.ylabel('Calls')
-plt.xticks(list(range(0,11,1)))
-plt.yticks(list(range(0,21,2)))
-plt.title('Memoization Growth')
+
+plt.subplot(132)
+plt.plot(values, calls,'bo-',values2,calls2,'ro-')
+plt.legend(['Recursive','Memoazation'])
+plt.xlabel("nth Fibonachi")
+plt.ylabel('Calls')
+plt.xticks(list(range(0,21,2)))
+plt.title('Both Growth')
 
 plt.show()
 ```

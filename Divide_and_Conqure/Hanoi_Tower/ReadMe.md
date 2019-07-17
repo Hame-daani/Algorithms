@@ -77,7 +77,7 @@ print('done')
     done
 
 
-Growth of Algorithm is: **O(2^n)**
+Growth of Algorithm is **Exponantial**: **O(2^n)**
 
 
 ```python

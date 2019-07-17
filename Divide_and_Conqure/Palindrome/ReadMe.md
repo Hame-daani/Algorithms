@@ -85,7 +85,7 @@ print('done')
 
 
 **Time Complexity** is: **T(n) = n/2**  
-with **Growth** of: **O(n)**
+with **Growth** of **Linear**: **O(n)**
 
 
 ```python
