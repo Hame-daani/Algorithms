@@ -4,29 +4,33 @@ Visualizing famous algorithms with time complexity and growth
 
 ## Comparisions
 
-* [Recursive-Fib vs Memoizing-Fib](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Fibonachi#growth-of-algorithms)
-* [Normal-Search vs Bisect-Search](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Search#growth)
-*
+* [Fibonachi](Divide_and_Conqure/Fibonachi#comparision)
+* [Searching](Divide_and_Conqure/Search#comparision)
+* [Sorting](Divide_and_Conqure/Sort#comparision)
+* 
 
 ## Complexities Overview
 
 ### Exponential (c^N)
 
-* [Recursive Fibonachi](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Fibonachi#recursive-algorithm)
-* [Hanoi Towers](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Hanoi_Tower#algorithm)
-* [Power-Set Generating](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Power_Set#algorithm)
+* [Recursive-Fibonachi](Divide_and_Conqure/Fibonachi#recursive)
+* [Hanoi Towers](Divide_and_Conqure/Hanoi_Tower#algorithm)
+* [Power-Set](Divide_and_Conqure/Power_Set#algorithm)
 *
 ### Polynomial (N^c)
-*
+* [Bubble-Sort](Divide_and_Conqure/Sort#bubble-sort)
+* [Selection-Sort](Divide_and_Conqure/Sort#selection-sort)
+* 
 ### Log-linear (NlogN)
-*
+* [Merge-Sort](Divide_and_Conqure/Sort#merge_sort)
+* 
 ### Linear (N)
-* [Memoizing Fibonachi](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Fibonachi#memoizing-algorithm)
-* [Palindrome Checking](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Palindrome)
-* [Normal-Search](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Search#normal-search)
+* [Memoizing-Fibonachi](Divide_and_Conqure/Fibonachi#memoizing-algorithm)
+* [Palindrome](Divide_and_Conqure/Palindrome#algorithm)
+* [Linear-Search](Divide_and_Conqure/Search#linear-search)
 *
 ### Logaritmic (logN)
-* [Bisect(Binary)-Search](https://github.com/HampSaD/Algorithms/tree/master/Divide_and_Conqure/Search#bisect-search)
+* [Bisect(Binary)-Search](Divide_and_Conqure/Search#bisect-search)
 *
 ### Constant (1)
 *
