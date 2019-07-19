@@ -1,8 +1,5 @@
 
-
-```python
 # Palindrome
-```
 
 
 ```python
@@ -22,12 +19,19 @@ def count_calls(counter):
 
 
 ```python
+test_num = 10
+```
+
+
+```python
 def get_total(counts):
     total= 0
     for key,value in counts.items():
         total+=value
     return total
 ```
+
+## Algorithm
 
 
 ```python
@@ -54,11 +58,17 @@ def isPalindrome(s):
     return isPal(toChars(s)), counter
 ```
 
+## Growth
+
+
+**Time Complexity** is: **T(n) = n/2**  
+with **Growth** of **Linear**: **O(n)**
+
 
 ```python
 import random
 growth = {}
-for i in range(1,11):
+for i in range(1,test_num+1):
     s = ""
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     for j in range(1,i):
@@ -69,36 +79,29 @@ for i in range(1,11):
     t_i = get_total(counts)
     growth[i*2] = t_i
 print('done')
-```
 
-    
-    xx
-    ueeu
-    ydccdy
-    yciuuicy
-    gwxmvvmxwg
-    mpvjfccfjvpm
-    nfztreggertzfn
-    bnxaujsaasjuaxnb
-    edulufkqttqkfulude
-    done
-
-
-**Time Complexity** is: **T(n) = n/2**  
-with **Growth** of **Linear**: **O(n)**
-
-
-```python
 values, calls = zip(*sorted(growth.items()))
 plt.plot(values, calls,'bo-')
 plt.xlabel("n long String")
 plt.ylabel('Calls')
-plt.xticks(list(range(0,21,2)))
-plt.yticks(list(range(0,11,1)))
+plt.xticks(list(range(0,test_num*2+1,2)))
 plt.title('Palindrome Growth')
 plt.show()
 ```
 
+    
+    gg
+    ylly
+    ltuutl
+    wkmccmkw
+    kmkijjikmk
+    elpzfnnfzple
+    zntwtfooftwtnz
+    vglyxdnllndxylgv
+    imjsxzrphhprzxsjmi
+    done
 
-![png](output_7_0.png)
+
+
+![png](output_8_1.png)
 
