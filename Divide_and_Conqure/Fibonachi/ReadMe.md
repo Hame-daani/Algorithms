@@ -23,9 +23,25 @@ def count_calls(counter):
     return decorator
 ```
 
-## Recursive Algorithm
+
+```python
+def get_total(counts):
+    total= 0
+    for key,value in counts.items():
+        total+=value
+    return total
+```
+
+
+```python
+test_num = 10
+```
+
+## Recursive
 
 Recursive algorithm with no optimization.
+
+### Algorithm
 
 
 ```python
@@ -40,35 +56,37 @@ def Recursive_fib(x):
     return fib_recur(x),counter
 ```
 
-The value of **10th Fibonachi** with this algorithm is:
+### Growth
+
+T(n) = **O(2^n)**
 
 
 ```python
-x,recur_count_10 = Recursive_fib(10)
-print("The value is:",x)
-```
+growth_rf = {}
+l = []
+for i in range(1,test_num+1):
+    r,c = Recursive_fib(i)
+    growth_rf[i] = get_total(c)
+print(growth_rf)
 
-    The value is: 89
+plt.figure(figsize=(10, 7))
 
+values, calls = zip(*sorted(growth_rf.items()))
 
-### Number of calls
-
-when calcuting 10th fibonachi.
-
-
-
-```python
-values, calls = zip(*sorted(recur_count_10.items()))
-plt.plot(values, calls,'bo-')
-plt.xlabel('Values')
+plt.plot(values, calls,'b-o')
+plt.xlabel('nth Fibonachi')
 plt.ylabel('Calls')
-plt.title('Recursive Function Calls')
-plt.xticks(list(range(0,11,1)))
+plt.xticks(list(range(1,test_num+1)))
+plt.title("Recursive Fibonachi Growth")
+
 plt.show()
 ```
 
+    {1: 1, 2: 3, 3: 5, 4: 9, 5: 15, 6: 25, 7: 41, 8: 67, 9: 109, 10: 177}
 
-![png](output_11_0.png)
+
+
+![png](output_12_1.png)
 
 
 ## Memoizing Algorithm
@@ -94,142 +112,66 @@ def Memoizing_fib(x):
     return fib_memo(x),counter
 ```
 
-The value of 10th Fibonachi with this algorithm is:
+### Growth
 
-
-```python
-x, memo_count_10 = Memoizing_fib(10)
-print("The value is:",x)
-```
-
-    The value is: 89
-
-
-### Number of calls
-
-when calcuting 10th fibonachi.
+T(n) = O(n)
 
 
 
 ```python
-values, calls = zip(*sorted(memo_count_10.items()))
-plt.plot(values, calls,'bo-')
-plt.xlabel('Values')
+growth_mf = {}
+l = []
+for i in range(1,test_num+1):
+    r,c = Memoizing_fib(i)
+    growth_mf[i] = get_total(c)
+print(growth_mf)
+
+plt.figure(figsize=(10, 7))
+
+values, calls = zip(*sorted(growth_mf.items()))
+
+plt.plot(values, calls,'r-o')
+plt.xlabel('nth Fibonachi')
 plt.ylabel('Calls')
-plt.title('Memoizing Function Calls')
-plt.xticks(list(range(0,11,1)))
-plt.yticks([0,1,2,3])
-plt.show()
-```
-
-
-![png](output_18_0.png)
-
-
-## Comparing Two Algorithm
-
-Defining a function to calcute total function call.
-
-
-```python
-def get_total(counts):
-    total= 0
-    for key,value in counts.items():
-        total+=value
-    return total
-```
-
-Calcute total call for 10th fibonachi number in both algorithm.
-
-
-```python
-total_recur_10 = get_total(recur_count_10)
-total_memo_10 = get_total(memo_count_10)
-```
-
-### Number of total calls side by side
-
-For Recursive it's **177**.
-and For memoization it's **19**.
-
-
-```python
-plt.figure(figsize=(15, 3))
-plt.xticks(list(range(0,190,10)))
-plt.barh(['Recursive','Memoizing'],[total_recur_10,total_memo_10])
-plt.title('Comparing Function Calls')
-plt.show()
-```
-
-
-![png](output_25_0.png)
-
-
-### Growth of Algorithms
-
-Calcute total number of calls for calcuting first to 10th fibonachi with both algorithms.
-
-
-```python
-growth_recur = {}
-for i in range(1,21):
-    x,recur_count = Recursive_fib(i)
-    t_i = get_total(recur_count)
-    growth_recur[i] = t_i
-print('done')
-```
-
-    done
-
-
-
-```python
-growth_memo = {}
-for i in range(1,21):
-    x,memo_count = Memoizing_fib(i)
-    t_i = get_total(memo_count)
-    growth_memo[i] = t_i
-print('done')
-```
-
-    done
-
-
-Visualazing Growth of both Algorithm Side by Side.  
-Growth of **Recursive** is **Exponantial**: **O(2^n)**  
-Growth of **Memoizing** is **Linear**: **O(2n)**
-
-
-```python
-plt.figure(figsize=(20, 10))
-
-values, calls = zip(*sorted(growth_recur.items()))
-values2, calls2 = zip(*sorted(growth_memo.items()))
-plt.subplot(131)
-plt.plot(values,calls,'bo-')
-plt.title("Recursive Growth")
-plt.xticks(list(range(0,21,2)))
-plt.xlabel("nth Fibonachi")
-plt.ylabel('Calls')
-
-plt.subplot(133)
-plt.plot(values2,calls2,'ro-')
-plt.title("Memoazation Growth")
-plt.xticks(list(range(0,21,2)))
-plt.xlabel("nth Fibonachi")
-plt.ylabel('Calls')
-
-plt.subplot(132)
-plt.plot(values, calls,'bo-',values2,calls2,'ro-')
-plt.legend(['Recursive','Memoazation'])
-plt.xlabel("nth Fibonachi")
-plt.ylabel('Calls')
-plt.xticks(list(range(0,21,2)))
-plt.title('Both Growth')
+plt.xticks(list(range(1,test_num+1)))
+plt.title("Memoizing Fibonachi Growth")
 
 plt.show()
 ```
 
+    {1: 1, 2: 3, 3: 5, 4: 7, 5: 9, 6: 11, 7: 13, 8: 15, 9: 17, 10: 19}
 
-![png](output_31_0.png)
+
+
+![png](output_17_1.png)
+
+
+## Comparision
+
+
+```python
+print("Recursive:",growth_rf)
+print("Memoizing:",growth_mf)
+
+plt.figure(figsize=(10, 7))
+
+values, calls = zip(*sorted(growth_rf.items()))
+values2, calls2 = zip(*sorted(growth_mf.items()))
+
+plt.plot(values, calls,'b-o',values2,calls2,'r-o')
+plt.xlabel('List Length')
+plt.ylabel('Calls')
+plt.title("Fibonachi Comparision")
+plt.xticks(list(range(0,test_num+1)))
+plt.legend(['Recursive','Memoizing'])
+
+plt.show()
+```
+
+    Recursive: {1: 1, 2: 3, 3: 5, 4: 9, 5: 15, 6: 25, 7: 41, 8: 67, 9: 109, 10: 177}
+    Memoizing: {1: 1, 2: 3, 3: 5, 4: 7, 5: 9, 6: 11, 7: 13, 8: 15, 9: 17, 10: 19}
+
+
+
+![png](output_19_1.png)
 
