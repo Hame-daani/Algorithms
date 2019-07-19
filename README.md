@@ -4,9 +4,9 @@ Visualizing famous algorithms with time complexity and growth
 
 ## Comparisions
 
-* [Fibonachi](Divide_and_Conqure/Fibonachi#comparision)
-* [Searching](Divide_and_Conqure/Search#comparision)
-* [Sorting](Divide_and_Conqure/Sort#comparision)
+* [Fibonachi](Divide_and_Conqure/Fibonachi/ReadMe#comparision)
+* [Searching](Divide_and_Conqure/Search/ReadMe#comparision)
+* [Sorting](Divide_and_Conqure/Sort/ReadMe#comparision)
 * 
 
 ## Complexities Overview
