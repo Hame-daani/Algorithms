@@ -1,4 +1,6 @@
 
+# Power-Set
+
 
 ```python
 import matplotlib.pyplot as plt
@@ -77,5 +79,5 @@ plt.show()
 ```
 
 
-![png](output_7_0.png)
+![png](output_8_0.png)
 
